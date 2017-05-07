@@ -16,9 +16,10 @@ public class ATParticleSystem : MonoBehaviour {
 	void Update () {
 
 		if (Random.value < _Chance) {
-			GameObject newParticle = Instantiate (_Prefab) as GameObject;
-			newParticle.transform.SetParent (transform);
-			newParticle.transform.position = transform.position;
+//			GameObject newParticle = Instantiate (_Prefab) as GameObject;
+//			newParticle.transform.SetParent (transform);//添加了FALSE后
+//			newParticle.transform.position = transform.position;
+			GameObject newParticle = Instantiate (_Prefab,transform.parent,true) as GameObject;//真实世界坐标
 		}
 		
 	}
